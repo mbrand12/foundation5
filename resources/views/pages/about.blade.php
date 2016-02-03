@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts/app')
 @section('content')
 
 <h1>About Me: {!! $name !!}</h1>

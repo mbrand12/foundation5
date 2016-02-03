@@ -22,4 +22,8 @@ class PagesController extends Controller
 
     return view('pages/about')->with('name', $name);
   }
+
+  public function contact() {
+    return view('pages/contact');
+  }
 }

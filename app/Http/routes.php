@@ -13,6 +13,7 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/pages/about', 'PagesController@about');
+Route::get('/pages/contact', 'PagesController@contact');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
