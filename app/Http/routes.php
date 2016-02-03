@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'PagesController@index');
+Route::get('/pages/about', 'PagesController@about');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
