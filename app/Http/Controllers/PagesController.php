@@ -18,6 +18,8 @@ class PagesController extends Controller
   }
 
   public function about() {
-    return view('pages/about');
+    $name = '<span style="color: green;">mbrand12</span>';
+
+    return view('pages/about')->with('name', $name);
   }
 }
