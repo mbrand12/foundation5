@@ -14,6 +14,10 @@
 Route::get('/', 'PagesController@index');
 Route::get('/pages/about', 'PagesController@about');
 Route::get('/pages/contact', 'PagesController@contact');
+
+Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/{id}', 'ArticlesController@show');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

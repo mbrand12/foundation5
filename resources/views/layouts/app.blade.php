@@ -5,7 +5,9 @@
     <link rel="stylesheet" href=" {{ elixir('css/app.css') }}">
   </head>
   <body>
-    @yield('content')
+    <div class="content">
+      @yield('content')
+    </div>
     @yield('footer')
   </body>
 </html>

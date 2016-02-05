@@ -1,7 +1,6 @@
 @extends('layouts/app')
 @section('content')
 
-
 <h1>About Me: {!! $name !!}</h1>
 
 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
