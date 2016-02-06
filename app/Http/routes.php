@@ -15,10 +15,6 @@ Route::get('/', 'PagesController@index');
 Route::get('/pages/about', 'PagesController@about');
 Route::get('/pages/contact', 'PagesController@contact');
 
-Route::get('/articles', 'ArticlesController@index');
-Route::get('/articles/show/{id}', 'ArticlesController@show');
-Route::get('/articles/create','ArticlesController@create');
-Route::post('/articles', 'ArticlesController@store');
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +28,8 @@ Route::post('/articles', 'ArticlesController@store');
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+  Route::get('/articles', 'ArticlesController@index');
+  Route::get('/articles/create','ArticlesController@create');
+  Route::get('/articles/{id}', 'ArticlesController@show');
+  Route::post('/articles', 'ArticlesController@store');
 });

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Article;
 use Carbon\Carbon;
 
-use Request;
+use App\Http\Requests\CreateArticleRequest;
 
 class ArticlesController extends Controller
 {
@@ -30,11 +30,8 @@ class ArticlesController extends Controller
     return view('articles/create');
   }
 
-  public function store() {
-    Article::create(Request::all());
-    // $article = new Article();
-    // $article->title = $input['title'];
-    // $article->body = $input['body'];
+  public function store(CreateArticleRequest $request) {
+    Article::create($request->all());
 
     return redirect('articles');
   }
