@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/pages', 'PagesController@index');
 Route::get('/pages/about', 'PagesController@about');
 Route::get('/pages/contact', 'PagesController@contact');
 
@@ -29,4 +33,10 @@ Route::get('/pages/contact', 'PagesController@contact');
 
 Route::group(['middleware' => ['web']], function () {
   Route::resource('articles', 'ArticlesController');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });
