@@ -1,5 +1,6 @@
 @extends('layouts/app')
 @section('content')
+<div class="container">
   <h1> Edit Article </h1>
   @include('shared/_errors')
 
@@ -10,4 +11,5 @@
   !!}
     @include('articles/_form', ['buttonName' => 'Edit Article'])
   {!! Form::close() !!}
+</div<
 @stop
