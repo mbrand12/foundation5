@@ -32,7 +32,15 @@ class Article extends Model
     $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
   }
 
+  public function getTagListAttribute() {
+    return $this->tags()->lists('id')->toArray();
+  }
+
   public function user() {
     return $this->belongsTo('App\User');
+  }
+
+  public function tags() {
+    return $this->belongsToMany('App\Tag')->withTimestamps();
   }
 }

@@ -30,11 +30,14 @@ class ArticlesController extends Controller
   }
 
   public function create() {
-    return view('articles/create');
+
+    $tags = \App\Tag::lists('name', 'id');
+    return view('articles/create')->with('tags', $tags);
   }
 
   public function store(ArticleRequest $request) {
-    Article::create($request->all());
+    $article = Article::create($request->all());
+    $article->tags()->attach($request->input('tag_list'));
 
     flash()->success("Your article has been created");
     return redirect('articles');
@@ -42,13 +45,18 @@ class ArticlesController extends Controller
 
   public function edit(Article $article) {
     // $article = Article::findOrFail($id);
+    $tags = \App\Tag::lists('name', 'id');
 
-    return view('articles/edit')->with('article', $article);
+    // return view('articles/edit')->with('article', $article)
+    //                             ->with('tags', $tags);
+    // consider using an alternative:
+    return view('articles/edit', compact('article', 'tags'));
   }
 
   public function update(Article $article, ArticleRequest $request) {
     // $article = Article::findOrFail($id);
     $article->update($request->all());
+    $article->tags()->sync($request->input('tag_list'));
 
     return redirect('articles');
   }
