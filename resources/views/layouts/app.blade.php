@@ -79,5 +79,9 @@
 
   <!-- JavaScripts -->
   <script src="{{ elixir('js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/select2/4.0.1/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/select2/4.0.1/css/select2.min.css">
+
+  @yield('footer')
 </body>
 </html>
