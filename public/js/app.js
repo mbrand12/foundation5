@@ -12206,6 +12206,8 @@ $(document).ready(function () {
     console.log($.fn.tooltip.Constructor.VERSION);
 });
 
+$('div.alert').not('.alert-important').delay(3000).slideUp(300);
+
 },{"bootstrap-sass":1,"jquery":2}]},{},[3]);
 
 //# sourceMappingURL=brow.js.map
